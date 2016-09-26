@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title>Switr - Simpler than Twitter</title>
+	<link rel="manifest" href="manifest.json">
+  <link href="https://fonts.googleapis.com/css?family=David+Libre|Questrial" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="css/style.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/formController.js"></script>
+  <script type="text/javascript" src="js/apiService.js"></script>
+</head>
+<body ng-app="switrApp">
+  <div class="container">
+    <div class="page-header">
+      <h3>switr - <small> Simpler than Twitter</small></h3>
+    </div>
+    <div class ng-controller="FormController">
+      <form>
+       <textarea class="form-control" rows="2" ng-trim="false" placeholder="What's on your mind" ng-model="swit" maxlength="100" required></textarea>
+       <br>
+       <label>{{100 - swit.length}} chars left</label>
+       <br>
+       With Socket? <input type="checkbox" name="usingSocket" ng-model="usingSocket">
+       <br>
+       <br>
+       <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="!swit" ng-click="doSwit(usingSocket)">Say it!</button>
+       <br>
+     </form>
+
+     <!-- next thing to do remove the UL below into another controller, so we can demo the communication between controller using factory -->
+
+     <ul class="list-group" ng-repeat="swit in swits">
+       <li class="list-group-item">{{swit}}</li>
+     </ul>
+   </div>
+ </div>
+
+</body>
+</html>
