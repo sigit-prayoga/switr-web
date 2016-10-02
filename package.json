@@ -1,0 +1,33 @@
+{
+  "name": "switr-web",
+  "version": "1.0.0",
+  "description": "Simpler than Twitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sigit-prayoga/switr-web.git"
+  },
+  "keywords": [
+    "sample",
+    "project",
+    "for",
+    "community"
+  ],
+  "author": "Sigit Prayoga <sigit@agnium.co.id>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sigit-prayoga/switr-web/issues"
+  },
+  "homepage": "https://github.com/sigit-prayoga/switr-web#readme",
+  "dependencies": {
+    "angularjs": "0.0.1",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0"
+  }
+}

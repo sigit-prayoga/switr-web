@@ -2,3 +2,21 @@
 body {
 	font-family: 'Questrial', sans-serif;
 }
+
+.main-title {
+	font-weight: bold;
+}
+
+.swit-box {
+	width: 300px;
+	height: 100px;
+	background-color: #F9F9F9;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+.swit-label {
+	margin-right: 20px;
+	font-size: 30px;
+	font-style: italic;
+}

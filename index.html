@@ -7,17 +7,24 @@
 	<link rel="manifest" href="manifest.json">
   <link href="https://fonts.googleapis.com/css?family=David+Libre|Questrial" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://bootswatch.com/cyborg/bootstrap.min.css">
   <link href="css/style.css" rel="stylesheet">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="js/formController.js"></script>
-  <script type="text/javascript" src="js/apiService.js"></script>
+  <script type="text/javascript" src="js/form.controller.js"></script>
+  <script type="text/javascript" src="js/api.service.js"></script>
+  <script type="text/javascript" src="js/eachSwitDirective/eachSwit.directive.js"></script>
 </head>
 <body ng-app="switrApp">
   <div class="container">
     <div class="page-header">
-      <h3>switr - <small> Simpler than Twitter</small></h3>
+      <div class="jumbotron">
+        <h1 class="main-title">switr</h1>
+        <p>Simpler than Twitter</p>
+        <p>This product is created for demo purpose to any tech community in Jakarta, or any other cities.</p>
+        <p><a class="btn btn-primary btn-lg" href="https://github.com/sigit-prayoga/switr-web.git" role="button">Learn me on Github</a></p>
+      </div>
     </div>
     <div class ng-controller="FormController">
       <form>
@@ -34,11 +41,13 @@
 
      <!-- next thing to do remove the UL below into another controller, so we can demo the communication between controller using factory -->
 
-     <ul class="list-group" ng-repeat="swit in swits">
-       <li class="list-group-item">{{swit}}</li>
+     <div class=".col-md-6">
+      <ul class="list-group" ng-repeat="swit in swits">
+       <each-swit></each-swit>
      </ul>
    </div>
- </div>
 
+ </div>
+</div>
 </body>
 </html>

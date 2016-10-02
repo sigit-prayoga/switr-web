@@ -44,7 +44,7 @@
 			var successCallback = function(successResponse) {
 				addSwit(successResponse.data.swit);
 				$scope.swit = '';
-			}
+			};
 			//send whatever inside the input to server
 			APIService.sendSwit($scope.swit, successCallback, errorCallback);
 		};
@@ -59,7 +59,7 @@
 				//refer this swits to the array we have, but always use copy, 
 				//otherwise, the reference to the template is just gone
 				angular.copy(swits, $scope.swits);
-			}
+			};
 
 			//call get request to get the swits and pass the success and error callbacks.
 			APIService.getSwits(successCallback, errorCallback);

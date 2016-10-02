@@ -45,6 +45,6 @@
 				//if http error occurs, it goes here and pass it on to error callback
 				errorCallback(error);
 			});
-		}
+		};
 	}
 })();
