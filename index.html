@@ -42,7 +42,7 @@
      <!-- next thing to do remove the UL below into another controller, so we can demo the communication between controller using factory -->
 
      <div class=".col-md-6">
-      <ul class="list-group" ng-repeat="swit in swits">
+      <ul class="list-group" ng-repeat="swit in swits | orderBy: '-time'">
        <each-swit></each-swit>
      </ul>
    </div>
