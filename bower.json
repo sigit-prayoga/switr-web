@@ -24,6 +24,7 @@
   ],
   "dependencies": {
     "angular": "angularjs#^1.5.8",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "moment": "^2.15.1"
   }
 }
