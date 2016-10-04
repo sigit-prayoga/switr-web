@@ -14,6 +14,9 @@
 		//list of swits that fetched from server
 		$scope.swits = [];
 
+		//to demo the integration of React 
+		$scope.isReact = false;
+
 		//right now, just create a error callback for all, send and get request!
 		var errorCallback = function(errorResponse) {
 			//do whatever you need when the post request fails
