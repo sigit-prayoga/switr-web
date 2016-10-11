@@ -46,5 +46,26 @@
 				errorCallback(error);
 			});
 		};
+
+		this.likeSwit = function(userId, switId, successCallback, errorCallback){
+			$http({
+				method: 'POST',
+				data: {
+					switId: switId,
+					userId: userId
+				},
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				url: baseUrl + '/api/like'
+			}).then(function(success) {
+				//pass the success response from http to callback function
+				successCallback(success);
+			}, function(error) {
+				//if http error occurs, it goes here and pass it on to error callback
+				errorCallback(error);
+			});
+		};
+
 	}
 })();

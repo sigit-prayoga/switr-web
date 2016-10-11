@@ -46,6 +46,8 @@
         With Socket? Open another browser window, and see the magic!
         <input name="usingSocket" ng-model="usingSocket" type="checkbox">
         <br>
+        With React? <input type="checkbox" name="usingReact" ng-model="isReact">
+        <br>
         <br>
         <button class="btn btn-primary btn-lg btn-block" ng-click="doSwit(usingSocket)" ng-disabled="!swit" type="button">
           Say it!
@@ -53,12 +55,14 @@
         <br>
       </form>
 
+      <div ng-show="alertMessage" class="alert alert-success" role="alert">{{alertMessage}}</div>
+
       <!-- next thing to do remove the UL below into another controller, so we can demo the communication between controller using factory -->
       <div class=".col-md-6" ng-show="!isReact">
         <input class="form-control" ng-model="searchSwit" placeholder="looking for something?" rows="2" type="text">
         <br>
-        <ul class="list-group" ng-repeat="swit in swits | filter: searchSwit | orderBy: '-time'">
-          <each-swit swit="swit">
+        <ul class="list-group" ng-repeat="current in swits | filter: searchSwit | orderBy: '-time'">
+          <each-swit swit="current">
           </each-swit>
         </ul>
       </div>

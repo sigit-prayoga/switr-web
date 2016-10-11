@@ -1,3 +1,13 @@
 <div class="list-group-item">
-	<h5>{{switObj.text}} <small class="pull-right">{{getMoment(switObj.time)}}</small></h5>	
+	<h5>{{switObj.text}}</h5>
+	
+	<small class="pull-left">{{getMoment(switObj.time)}}</small>
+	<br>
+	<span class="pull-right">
+		<button class="btn btn-primary glyphicon glyphicon-thumbs-up" ng-click="likeSwit(switObj)"></button>
+		<label>{{ switObj.likes.length }} likes</label>
+	</span>
+	<br>
+	<br>
+
 </div>

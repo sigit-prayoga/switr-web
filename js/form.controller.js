@@ -3,12 +3,14 @@
 	angular.module('switrApp').controller('FormController', FormController);
 
 	//inject whatever this controller needs here
-	FormController.$inject = ['$scope', 'APIService'];
+	FormController.$inject = ['$scope' ,'$timeout', 'APIService'];
 
 	//define the controller, $scope and APIService will be imported as long as you pass it into $inject
-	function FormController($scope, APIService) {
+	function FormController($scope, $timeout, APIService) {
 		//init socket
 		var socket = io.connect(baseUrl);
+		//init alert Message
+		$scope.alertMessage = '';
 		//your swit from the input
 		$scope.swit = '';
 		//list of swits that fetched from server
@@ -16,6 +18,26 @@
 
 		//to demo the integration of React 
 		$scope.isReact = false;
+		//reload when it gets true
+		$scope.$watch('isReact', function(newVal, oldVal){
+			if (newVal) {
+				//refresh the list
+				getSwits();
+			}
+		});
+
+		//register an event to trigger alert message
+		$scope.$on('getAlertMessage', function(event, alertMessage){
+			console.log('getAlertMessage gets called');
+			$scope.alertMessage = alertMessage;
+			//setTimeout will not work here, the alertMessage will not update the UI, unless you do it with $apply
+			//I'd rather use Angular's $timeout service
+			$timeout(function(){
+				console.log('reseting alert message');
+				//reset after 2 secs
+				$scope.alertMessage = '';
+			}, 2000);
+		});
 
 		//right now, just create a error callback for all, send and get request!
 		var errorCallback = function(errorResponse) {
